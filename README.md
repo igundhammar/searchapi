@@ -27,6 +27,8 @@ The frontend is a **static HTML/JavaScript** page located in the Presentation la
 `cd SearchApi.Presentation`
 `dotnet run`
 
+(or just run it in Visual Studio 😃)
+
 The API will start at https://localhost:7051
 Swagger UI is available at https://localhost:7051/swagger
 
