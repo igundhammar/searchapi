@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search API</title>
+</head>
+<body>
+    <h1>Search API</h1>
+
+    <form id="searchForm">
+        <label for="query">Search query:</label>
+        <input type="text" id="query" name="query" required placeholder="Enter words, e.g. michael jackson" />
+        <br /><br />
+
+        <label><input type="checkbox" name="engine" value="google" checked /> Google</label>
+        <label><input type="checkbox" name="engine" value="bing" checked /> Bing</label>
+        <br /><br />
+
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Results</h2>
+    <div id="results" style="margin-top: 10px;"></div>
+
+    <script>
+        const baseUrl = "https://localhost:7051";
+        const form = document.getElementById('searchForm');
+        const resultsDiv = document.getElementById('results');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const query = document.getElementById('query').value.trim();
+            const engines = Array.from(document.querySelectorAll('input[name="engine"]:checked'))
+                .map(cb => cb.value);
+
+            if (!query || engines.length === 0) {
+                alert("Please enter a query and select at least one search engine.");
+                return;
+            }
+
+            const params = new URLSearchParams();
+            params.append('query', query);
+            engines.forEach(engine => params.append('searchEngines', engine));
+
+            resultsDiv.innerHTML = "<p><em>Searching...</em></p>";
+
+            try {
+
+                const response = await fetch(`${baseUrl}/api/search?${params.toString()}`, {
+                    method: 'GET'
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                resultsDiv.innerHTML = "";
+                if (!data || data.length === 0) {
+                    resultsDiv.innerHTML = "<p>No results found.</p>";
+                    return;
+                }
+
+                const list = document.createElement("ul");
+                list.style.listStyle = "none";
+                list.style.padding = "0";
+
+                data.forEach(result => {
+                    const li = document.createElement("li");
+                    li.style.marginBottom = "10px";
+                    li.style.padding = "10px";
+                    li.style.border = "1px solid #ccc";
+                    li.style.borderRadius = "6px";
+                    li.style.background = "#f8f8f8";
+
+                    let html = `
+        <strong>${result.engineName ?? "Unknown Engine"}</strong><br/>
+        <span style="color:#555;">Total hits:</span>
+        <span style="font-weight:bold;">
+            ${result.totalCount != null ? result.totalCount.toLocaleString() : "N/A"}
+        </span>
+        <br/><br/>
+        <span style="color:#555;">Per word:</span>
+        <ul style="margin-top:5px;">
+    `;
+
+                    if (result.wordCounts) {
+                        for (const [word, count] of Object.entries(result.wordCounts)) {
+                            html += `<li>${word}: <strong>${count != null ? count.toLocaleString() : "N/A"}</strong></li>`;
+                        }
+                    }
+
+                    html += "</ul>";
+
+                    li.innerHTML = html;
+                    list.appendChild(li);
+                });
+                resultsDiv.appendChild(list);
+
+            } catch (err) {
+                resultsDiv.innerHTML = `<p style="color:red;">Error: ${err.message}</p>`;
+            }
+        });
+    </script>
+
+</body>
+</html>

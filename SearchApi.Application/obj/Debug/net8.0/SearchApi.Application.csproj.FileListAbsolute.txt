@@ -1,0 +1,16 @@
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\bin\Debug\net8.0\SearchApi.Application.deps.json
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\bin\Debug\net8.0\SearchApi.Application.dll
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\bin\Debug\net8.0\SearchApi.Application.pdb
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\bin\Debug\net8.0\SearchApi.Domain.dll
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\bin\Debug\net8.0\SearchApi.Domain.pdb
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\obj\Debug\net8.0\SearchApi.Application.csproj.AssemblyReference.cache
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\obj\Debug\net8.0\SearchApi.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\obj\Debug\net8.0\SearchApi.Application.AssemblyInfoInputs.cache
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\obj\Debug\net8.0\SearchApi.Application.AssemblyInfo.cs
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\obj\Debug\net8.0\SearchApi.Application.csproj.CoreCompileInputs.cache
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\obj\Debug\net8.0\SearchApi.Application.sourcelink.json
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\obj\Debug\net8.0\SearchAp.F9B03A5F.Up2Date
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\obj\Debug\net8.0\SearchApi.Application.dll
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\obj\Debug\net8.0\refint\SearchApi.Application.dll
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\obj\Debug\net8.0\SearchApi.Application.pdb
+C:\Users\ida.gundhammar\Documents\repos\searchapi\SearchApi\SearchApi.Application\obj\Debug\net8.0\ref\SearchApi.Application.dll
